@@ -1,0 +1,30 @@
+USE [myDB1]--USE為保留關鍵字，後接資料庫名稱
+GO
+
+/* /**/為多行註解符號
+====== Object:  Table [dbo].[學生]    Script Date: 2023/8/4 下午 07:54:01 =====
+*/
+-- 此為單行註解
+SET ANSI_NULLS ON;
+SET QUOTED_IDENTIFIER ON; --雙引號識別碼作用為ON，"SELECT" or [SELECT]保留關鍵字可當作一般字串處理
+GO --GO為多行陳述句(Statements)批次執行的結束
+
+CREATE TABLE "dbo"."班級"(
+	[學號] [char](3) NOT NULL,
+	[課程編號] [char](3) NOT NULL,
+	[教授編號] [char](3) NOT NULL,
+	[教室] [char](4) NOT NULL,
+	[上課時間] [datetime] NULL
+) ON [PRIMARY]
+GO
+
+CREATE TABLE "dbo"."課程"(
+	[課程編號] [char](3) NOT NULL,
+	[課程名稱] [varchar](10) NOT NULL,
+	[學分] [int] NOT NULL
+ CONSTRAINT [PK_課程編號] PRIMARY KEY CLUSTERED 
+(
+	[課程編號] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
