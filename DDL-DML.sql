@@ -1,4 +1,14 @@
-USE [myDB1]--USE為保留關鍵字，後接資料庫名稱
+SELECT TOP (9999) [學號]
+      ,[姓名]
+      ,[性別]
+      ,[生日]
+      ,[地址]
+      ,[電話]
+  FROM [myDB0802].[dbo].[學生]
+  WHERE [生日] IS NOT NULL;
+
+
+USE [myDB0802]--USE為保留關鍵字，後接資料庫名稱
 GO
 
 /* /**/為多行註解符號
@@ -38,4 +48,27 @@ Create Table "教授"(
 	[教授編號] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
+
+GO
+
+select *
+from [dbo].[學生]
+
+select *
+from [dbo].[課程]
+
+select *
+from [dbo].[教授]
+
+USE [myDB0802]
+GO
+
+INSERT INTO [dbo].[教授]
+           ([教授編號]
+           ,[科系]
+           ,[職稱])
+     VALUES
+           (<教授編號, char(3),>
+           ,<科系, char(8),>
+           ,<職稱, char(10),>)
 GO
